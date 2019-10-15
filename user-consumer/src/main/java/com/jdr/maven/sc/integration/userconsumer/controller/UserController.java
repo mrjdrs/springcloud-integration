@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
  * @date 2019/10/15 10:51
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/userConsumer")
 public class UserController {
 
     @Autowired
@@ -21,6 +21,6 @@ public class UserController {
 
     @GetMapping(value = "/get/{name}")
     public UserModel getUserByName(@PathVariable("name") String userName) {
-        return restTemplate.getForObject("http://localhost:8080/user/get/" + userName, UserModel.class);
+        return restTemplate.getForObject("http://localhost:8080/userProvider/get/" + userName, UserModel.class);
     }
 }

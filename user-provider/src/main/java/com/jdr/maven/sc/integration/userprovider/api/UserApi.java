@@ -14,7 +14,7 @@ import java.util.Map;
  * @date 2019/10/15 10:51
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/userProvider")
 public class UserApi {
 
     private static final Map<String, UserModel> USERS = new HashMap<>();
