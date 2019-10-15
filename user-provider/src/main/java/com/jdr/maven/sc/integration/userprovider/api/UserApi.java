@@ -1,4 +1,4 @@
-package com.jdr.maven.sc.integration.userprovider.controller;
+package com.jdr.maven.sc.integration.userprovider.api;
 
 import com.jdr.maven.sc.integration.userprovider.model.UserModel;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,15 +9,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
-
 /**
  * @author zhoude
  * @date 2019/10/15 10:51
  */
 @RestController
 @RequestMapping("/user")
-public class UserController {
+public class UserApi {
 
     private static final Map<String, UserModel> USERS = new HashMap<>();
 
@@ -26,7 +24,7 @@ public class UserController {
         USERS.put("JDR", new UserModel("JDR", 30));
     }
 
-    @GetMapping(value = "/get/{name}", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/get/{name}")
     public UserModel getUserByName(@PathVariable("name") String userName) {
         return USERS.get(userName);
     }

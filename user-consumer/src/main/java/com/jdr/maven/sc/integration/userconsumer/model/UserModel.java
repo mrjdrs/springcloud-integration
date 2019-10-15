@@ -1,4 +1,4 @@
-package com.jdr.maven.sc.integration.userprovider.model;
+package com.jdr.maven.sc.integration.userconsumer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
