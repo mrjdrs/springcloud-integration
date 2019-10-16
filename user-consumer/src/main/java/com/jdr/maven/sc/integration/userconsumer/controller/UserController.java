@@ -21,6 +21,6 @@ public class UserController {
 
     @GetMapping(value = "/get/{name}")
     public UserModel getUserByName(@PathVariable("name") String userName) {
-        return restTemplate.getForObject("http://localhost:8080/userProvider/get/" + userName, UserModel.class);
+        return restTemplate.getForObject("http://user-provider/userProvider/get/" + userName, UserModel.class);
     }
 }
