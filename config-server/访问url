@@ -1,0 +1,6 @@
+native方式：
+
+http://localhost:11000/config/default
+http://localhost:11000/config/prod
+http://localhost:11000/config/dev
+
