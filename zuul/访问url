@@ -1,0 +1,3 @@
+http://localhost:9999/${app-name}/${service.url-prefix}/**
+http://localhost:9999/user-consumer/userConsumer/get/ZD
+http://localhost:9999/user-consumer/userProvider/get/ZD
