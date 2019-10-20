@@ -2,6 +2,8 @@ package com.jdr.maven.sc.integration.zuul.filter;
 
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.exception.ZuulException;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 import static org.springframework.cloud.netflix.zuul.filters.support.FilterConstants.PRE_TYPE;
@@ -11,7 +13,11 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
  * @date 2019/10/20 9:44
  */
 @Component
+@RefreshScope
 public class LogFilter extends ZuulFilter {
+
+    @Value("${zuul.log-name}")
+    private String logName;
 
     /**
      * 过滤器类型
@@ -51,7 +57,7 @@ public class LogFilter extends ZuulFilter {
      */
     @Override
     public Object run() throws ZuulException {
-        System.err.println("这是日志");
+        System.err.println("这是日志" + logName);
         return null;
     }
 }
