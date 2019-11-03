@@ -17,7 +17,7 @@ public class SleuthServerApplication {
     }
 
     @Bean
-    public MySQLStorage mySQLStorage(DataSource datasource) {
+    public MySQLStorage initMySQLStorage(DataSource datasource) {
         return MySQLStorage.builder().datasource(datasource).executor(Runnable::run).build();
     }
 }
