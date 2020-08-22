@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @author zhoude
  * @date 2020/8/17 21:23
  */
-@FeignClient(name = "user-provider")
+@FeignClient(name = "user-provider", path = "/userProvider")
 public interface ProviderService {
 
-    @GetMapping(value = "/userProvider/get/{name}")
+    @GetMapping(value = "/get/{name}")
     UserModel getUserByName(@PathVariable("name") String userName);
 
 }
